@@ -4,6 +4,7 @@ import NotFoundPage from './pages/NotFoundPage'
 export default [
   {
     path: '/',
+    exact: true,
     component: HomePage
   },
   {

@@ -48,14 +48,13 @@ module.exports = {
           src: resolve('src/assets/mmt.png'),
           size: '1024x1024'
         }
-      ],
-      
+      ]
     }),
 
-    new ServiceWorkerWebpackPlugin({
-      entry: absolute('src/sw.js'),
-      publicPath: '/assets/'
-    }),
+    // new ServiceWorkerWebpackPlugin({
+    //   entry: absolute('src/sw.js'),
+    //   publicPath: '/assets/'
+    // }),
 
     new CopyWebpackPlugin([{
       from: absolute('src/assets'),

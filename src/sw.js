@@ -1,5 +1,5 @@
+const template = `
 const CACHE_NAME = 'v1'
-
 console.info('In offline')
 
 self.addEventListener('install', event => {
@@ -52,3 +52,6 @@ self.addEventListener('activate', event => {
       .then(() => self.clients.claim())
   )
 })
+`
+
+export default template

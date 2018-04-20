@@ -26,7 +26,7 @@ class Html extends Component {
         <body {...helmet.bodyAttributes.toComponent()}>
           <div id='root' dangerouslySetInnerHTML={{__html: this.props.children}} />
           <script dangerouslySetInnerHTML={{__html: injectedState}} />
-          <script src={`${pathPrefix}/assets/sw.js`} />
+          <script src={`${pathPrefix}/sw.js`} />
           <script src={`${pathPrefix}/assets/bundle.js`} />
         </body>
       </html>
