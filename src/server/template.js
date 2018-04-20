@@ -41,7 +41,8 @@ class Html extends Component {
           {helmet.title.toComponent()}
           <meta charSet='utf-8' />
           <meta httpEquiv='X-UA-Compatible' content='IE=edge' />
-          <meta name='viewport' content='width=device-width, initial-scale=1' />
+          <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+          <meta name='theme-color' content='#353535' />
           <meta name='mobile-web-app-capable' content='yes' />
           {helmet.meta.toComponent()}
           <link href={`${pathPrefix}/assets/styles.css`} rel='stylesheet' />

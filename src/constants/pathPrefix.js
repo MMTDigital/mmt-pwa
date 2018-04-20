@@ -1,2 +1,2 @@
-const pathPrefix = '/'
+const pathPrefix = ''
 export default pathPrefix
