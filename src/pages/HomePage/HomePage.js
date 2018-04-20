@@ -1,13 +1,13 @@
 import React, { Component } from 'react'
 
-class NotFoundPage extends Component {
+class HomePage extends Component {
   render () {
     return (
       <div>
-        404 - Not found.
+        home
       </div>
     )
   }
 }
 
-export default NotFoundPage
+export default HomePage
