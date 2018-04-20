@@ -1,0 +1,44 @@
+{
+  "presets": [
+    [
+      "env", {
+        "modules": false
+      }
+    ]
+  ],
+  "plugins": [
+    "react-ssr",
+    "transform-react-jsx",
+    "transform-decorators-legacy",
+    "transform-class-properties",
+    "transform-object-rest-spread",
+    [
+      "module-resolver", {
+        "root": ["./"],
+        "alias": {
+          "@routes": "./src/routes",
+          "@constants": "./src/constants",
+          "@helpers": "./src/helpers",
+          "@components": "./src/components"
+        }
+      }
+    ],
+    [
+      "react-css-modules", {
+        "filetypes": {
+          ".scss": {
+            "syntax": "postcss-scss"
+          }
+        },
+        "generateScopedName": "vfuk-[name]__[local]"
+      }
+    ]
+  ],
+  "env": {
+    "test": {
+      "presets": [
+        "env"
+      ]
+    }
+  }
+}
