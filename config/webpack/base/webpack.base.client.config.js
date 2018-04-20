@@ -1,8 +1,11 @@
 const { resolve } = require('path')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
+const WebpackPwaManifest = require('webpack-pwa-manifest')
+const ServiceWorkerWebpackPlugin = require('serviceworker-webpack-plugin')
 const image = require('../loader-configs/image')
 const font = require('../loader-configs/font')
 const offline = require('../loader-configs/offline')
+
 const absolute = file => resolve(__dirname, '../../../', file)
 
 module.exports = {
@@ -31,11 +34,34 @@ module.exports = {
   },
 
   plugins: [
+    new WebpackPwaManifest({
+      filename: 'manifest.json',
+      name: 'MMT Management Manager',
+      short_name: 'MMTPWA',
+      description: 'Manage your MMT Management in this PWA!',
+      background_color: '#ffffff',
+      orientation: 'portrait',
+      display: 'standalone',
+      publicPath: '/',
+      icons: [
+        {
+          src: resolve('src/assets/mmt.png'),
+          size: '1024x1024'
+        }
+      ],
+      
+    }),
+
+    new ServiceWorkerWebpackPlugin({
+      entry: absolute('src/sw.js'),
+      publicPath: '/assets/'
+    }),
+
     new CopyWebpackPlugin([{
-      from: resolve(__dirname, '../../../src/assets'),
+      from: absolute('src/assets'),
       to: '.'
     }, {
-      from: resolve(__dirname, '../../../src/offline.js'),
+      from: absolute('src/sw.js'),
       to: '.'
     }])
   ]

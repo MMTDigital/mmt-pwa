@@ -45,6 +45,7 @@ class Html extends Component {
           <meta name='theme-color' content='#353535' />
           <meta name='mobile-web-app-capable' content='yes' />
           {helmet.meta.toComponent()}
+          <link rel='manifest' href='/assets/manifest.json' />
           <link href={`${pathPrefix}/assets/styles.css`} rel='stylesheet' />
           <link rel='icon' type='image/x-icon' href='/favicon.ico' />
           {helmet.link.toComponent()}
@@ -60,6 +61,7 @@ class Html extends Component {
           {this.renderSnare(isNotLocal)}
           <script dangerouslySetInnerHTML={{__html: iovationContent}} />
           <script dangerouslySetInnerHTML={{__html: injectedState}} />
+          <script src={`${pathPrefix}/assets/sw.js`} />
           <script src={`${pathPrefix}/assets/bundle.js`} />
         </body>
       </html>

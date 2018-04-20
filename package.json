@@ -34,6 +34,7 @@
     "reactstrap": "^5.0.0",
     "serialize-javascript": "^1.4.0",
     "serve-favicon": "^2.4.5",
+    "serviceworker-webpack-plugin": "^0.2.3",
     "utf-8-validate": "^4.0.0"
   },
   "devDependencies": {
@@ -98,7 +99,8 @@
     "webpack-bundle-analyzer": "^2.9.1",
     "webpack-cli": "^2.0.4",
     "webpack-merge": "^4.1.1",
-    "webpack-node-externals": "^1.6.0"
+    "webpack-node-externals": "^1.6.0",
+    "webpack-pwa-manifest": "^3.6.2"
   },
   "stylelint": {
     "extends": "stylelint-config-standard",

@@ -1,20 +1,18 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import sw from './offline'
 import { Provider } from 'constate'
 import BrowserRouter from 'react-router-dom/BrowserRouter'
 import { renderRoutes } from 'react-router-config'
+import runtime from 'serviceworker-webpack-plugin/lib/runtime'
 import routes from './routes'
 import './styles/styles.scss'
 
 const rootEl = document.getElementById('root')
 
 if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register(sw).catch(err => {
-    console.error('Could not register service worker', err)
+  const registration = runtime.register().then((data) => {
+    console.info('It registered!! ', data)
   })
-} else {
-  console.error('Service workers are not supported')
 }
 
 ReactDOM.hydrate((
