@@ -1,0 +1,174 @@
+{
+  "name": "web-shop",
+  "version": "1.0.0",
+  "description": "The repository to house all shop related journeys in Vodafone, UK",
+  "main": "index.js",
+  "scripts": {
+    "start": "cross-env NODE_ENV=local webpack --config config/webpack/local/webpack.local.config",
+    "build:dev": "webpack --config config/webpack/dev/webpack.dev.config",
+    "build:prod": "webpack --config config/webpack/prod/webpack.prod.config",
+    "test": "jest",
+    "test:cc": "jest --coverage"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "compression": "^1.7.1",
+    "constate": "^0.1.2",
+    "express": "^4.16.2",
+    "express-session": "^1.15.6",
+    "express-static-gzip": "^0.3.2",
+    "helmet": "^3.10.0",
+    "hoist-non-react-statics": "^2.5.0",
+    "html-minifier": "^3.5.14",
+    "isomorphic-fetch": "^2.2.1",
+    "react": "^16.3.1",
+    "react-dom": "^16.3.1",
+    "react-helmet": "5.1",
+    "react-router": "^4.2.0",
+    "react-router-config": "^1.0.0-beta.4",
+    "react-router-dom": "^4.1.2",
+    "react-ssr": "^1.0.0-alpha.2",
+    "reactstrap": "^5.0.0",
+    "serialize-javascript": "^1.4.0",
+    "serve-favicon": "^2.4.5",
+    "utf-8-validate": "^4.0.0"
+  },
+  "devDependencies": {
+    "autoprefixer": "^7.2.3",
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-jest": "^22.4.1",
+    "babel-loader": "^7.1.2",
+    "babel-plugin-dynamic-import-node": "^1.2.0",
+    "babel-plugin-inline-json": "^1.2.2",
+    "babel-plugin-inline-svg": "^0.1.0",
+    "babel-plugin-module-resolver": "^2.7.0",
+    "babel-plugin-react-css-modules": "^3.3.2",
+    "babel-plugin-react-ssr": "^1.0.0-alpha.2",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-decorators-legacy": "^1.3.4",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-plugin-transform-react-jsx": "^6.24.1",
+    "babel-preset-env": "^1.6.1",
+    "babel-register": "^6.26.0",
+    "brotli-webpack-plugin": "^0.5.0",
+    "compression-webpack-plugin": "^1.1.2",
+    "concurrently": "^3.5.1",
+    "copy-webpack-plugin": "^4.3.0",
+    "cross-env": "^5.1.3",
+    "css-loader": "^0.28.7",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
+    "enzyme-to-json": "^3.3.1",
+    "exports-loader": "^0.6.4",
+    "extract-text-webpack-plugin": "^3.0.2",
+    "file-loader": "^1.1.5",
+    "friendly-errors-webpack-plugin": "^1.6.1",
+    "happypack": "^4.0.0",
+    "html-loader": "^0.5.1",
+    "html-webpack-plugin": "^2.30.1",
+    "identity-obj-proxy": "^3.0.0",
+    "img-loader": "^2.0.0",
+    "imports-loader": "^0.7.1",
+    "jest": "^22.4.2",
+    "json-loader": "^0.5.7",
+    "node-sass": "^4.7.2",
+    "nodemon": "^1.13.2",
+    "optimize-css-assets-webpack-plugin": "^4.0.0",
+    "postcss-loader": "^2.0.9",
+    "postcss-scss": "^1.0.2",
+    "raw-loader": "^0.5.1",
+    "react-hot-loader": "^4.0.0",
+    "reload-server-webpack-plugin": "^1.0.1",
+    "rimraf": "^2.6.2",
+    "sass-loader": "^6.0.6",
+    "sass-resources-loader": "^1.3.2",
+    "standard": "^10.0.3",
+    "start-server-webpack-plugin": "^2.2.0",
+    "style-loader": "^0.19.1",
+    "stylelint": "^8.4.0",
+    "stylelint-config-standard": "^18.0.0",
+    "stylelint-webpack-plugin": "^0.9.0",
+    "svg-inline-loader": "^0.8.0",
+    "url-loader": "^0.6.2",
+    "webpack": "^3.10.0",
+    "webpack-bundle-analyzer": "^2.9.1",
+    "webpack-cli": "^2.0.4",
+    "webpack-merge": "^4.1.1",
+    "webpack-node-externals": "^1.6.0"
+  },
+  "stylelint": {
+    "extends": "stylelint-config-standard",
+    "ignoreFiles": [
+      "src/styles/vendor/**/*.scss",
+      "lib/*.scss"
+    ],
+    "ignoreProperties": [
+      "composes"
+    ],
+    "rules": {
+      "max-empty-lines": 4,
+      "string-quotes": "single",
+      "function-url-quotes": "always",
+      "color-hex-length": "long",
+      "declaration-colon-newline-after": null,
+      "declaration-block-no-redundant-longhand-properties": null,
+      "font-family-name-quotes": null,
+      "number-leading-zero": "never",
+      "value-list-comma-newline-after": null,
+      "max-nesting-depth": 2,
+      "selector-pseudo-element-colon-notation": "single",
+      "at-rule-name-space-after": null,
+      "declaration-empty-line-before": null,
+      "at-rule-no-unknown": [
+        true,
+        {
+          "ignoreAtRules": [
+            "extend",
+            "mixin",
+            "include",
+            "content",
+            "if",
+            "else",
+            "for",
+            "function",
+            "return"
+          ]
+        }
+      ],
+      "property-no-unknown": [
+        true,
+        {
+          "ignoreProperties": [
+            "composes"
+          ]
+        }
+      ]
+    }
+  },
+  "jest": {
+    "moduleNameMapper": {
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga|html)$": "<rootDir>config/jest/jest.filemock.js",
+      "\\.(css|scss)$": "identity-obj-proxy"
+    },
+    "setupFiles": [
+      "./config/jest/jest.setup.js"
+    ],
+    "modulePaths": [
+      "<rootDir>/src"
+    ],
+    "modulePathIgnorePatterns": [
+      "<rootDir>/lib"
+    ],
+    "collectCoverageFrom": [
+      "src/**/*.js"
+    ],
+    "transform": {
+      "^.+\\.js?$": "babel-jest"
+    },
+    "verbose": true
+  }
+}
