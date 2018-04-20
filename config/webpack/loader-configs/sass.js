@@ -38,8 +38,7 @@ const baseLoaders = [
     loader: 'sass-resources-loader',
     options: {
       resources: [
-        './node_modules/@vfuk/components/resources/resources.scss',
-        './src/shared/styles/resources.scss'
+        './src/styles/resources.scss'
       ]
     }
   }

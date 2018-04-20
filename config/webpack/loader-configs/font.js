@@ -7,7 +7,7 @@ const client = {
   use: {
     loader: 'file-loader',
     options: {
-      publicPath: '/shop/assets/',
+      publicPath: '/assets/',
       name: 'fonts/[name].[ext]?[hash]'
     }
   }

@@ -1,2 +1,2 @@
-const pathPrefix = '/shop'
+const pathPrefix = '/'
 export default pathPrefix

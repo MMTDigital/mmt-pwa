@@ -27,7 +27,7 @@ module.exports = {
 
   plugins: [
     new CopyWebpackPlugin([{
-      from: resolve(__dirname, '../../../src/shared/assets'),
+      from: resolve(__dirname, '../../../src/assets'),
       to: '.'
     }])
   ]

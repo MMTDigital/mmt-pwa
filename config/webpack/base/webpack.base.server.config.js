@@ -7,7 +7,7 @@ const absolute = file => resolve(__dirname, '../../../', file)
 module.exports = {
   entry: {
     index: [
-      absolute('src/shared/server')
+      absolute('src/server')
     ]
   },
 
