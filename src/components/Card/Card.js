@@ -3,18 +3,14 @@ import PropTypes from 'prop-types';
 import './Card.scss';
 
 class Card extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   renderStats(stat) {
     return (
-      <div styleName='stat' key={stat.title}>
-        <div styleName='stat__title'>
-          { stat.title } <span>...</span>
+      <div styleName='statistic' key={stat.title}>
+        <div styleName='stat'>
+          {stat.title} <span styleName='dots'>...</span>
         </div>
-        <div styleName='stat__value'>
-          { stat.value }
+        <div styleName='value'>
+          {stat.value}
         </div>
       </div>
     )
@@ -26,20 +22,20 @@ class Card extends Component {
 
     return (
       <div styleName='card'>
-        <div styleName='image' style={ background }>
+        <div styleName='image' style={background}>
           <div styleName='subtitle'>
-            { subtitle }
+            {subtitle}
           </div>
         </div>
         <div styleName='name'>
-          { name }!
+          {name}!
         </div>
         <div styleName='bio'>
-          <span>Top Trumps File</span>
-          <p>{ bio }</p>
+          <span styleName='title'>Top Trumps File</span>
+          <p styleName='text'>{bio}</p>
         </div>
         <div styleName='stats'>
-          { stats.map(this.renderStats) }
+          {stats.map(this.renderStats)}
         </div>
       </div>
     )
