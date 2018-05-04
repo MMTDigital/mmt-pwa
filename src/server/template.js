@@ -22,6 +22,7 @@ class Html extends Component {
           <link href={`${pathPrefix}/assets/styles.css`} rel='stylesheet' />
           <link rel='icon' type='image/x-icon' href='/favicon.ico' />
           {helmet.link.toComponent()}
+          <link href='https://fonts.googleapis.com/css?family=Bangers' rel='stylesheet' />
         </head>
         <body {...helmet.bodyAttributes.toComponent()}>
           <div id='root' dangerouslySetInnerHTML={{__html: this.props.children}} />
