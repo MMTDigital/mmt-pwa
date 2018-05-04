@@ -1,0 +1,51 @@
+$activated-colour: #ec2821;
+$deactive-colour: grey;
+
+.activated {
+  width: 100%;
+  display: block;
+  border: 2px solid $activated-colour;
+  background-color: transparent;
+  padding: 12px;
+  text-transform: uppercase;
+  margin: 12px 0;
+  position: relative;
+  color: $activated-colour;
+  transition: .3s;
+  transform: translateZ(0);
+  overflow: hidden;
+  cursor: pointer;
+
+  &:after {
+    position: absolute;
+    content: '';
+    height: 100%;
+    width: 0;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: .3s;
+    background-color: $activated-colour;
+    z-index: -1;
+  }
+
+  &:hover {
+    color: white;
+
+    &:after {
+      width: 100%;
+    }
+  }
+}
+
+.deactivated {
+  width: 100%;
+  display: block;
+  border: 2px solid $deactive-colour;
+  background-color: $deactive-colour;
+  padding: 12px;
+  text-transform: uppercase;
+  margin: 12px 0;
+  color: white;
+  transition: .3s;
+}

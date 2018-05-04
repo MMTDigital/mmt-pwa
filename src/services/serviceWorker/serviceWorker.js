@@ -11,7 +11,8 @@ function registerWorker() {
       console.log('Service Worker is registered', swReg);
       
       swRegistration = swReg;
-      subscribeUser();
+      // Commented out and moved to Component for time being as sporadic on mobile and required multiple refreshes of page
+      // subscribeUser();
     })
     .catch(function(error) {
       console.error('Service Worker Error', error);
@@ -37,6 +38,7 @@ function urlB64ToUint8Array(base64String) {
 }
 
 function subscribeUser() {
+  console.log("running subscribe user");
   const applicationServerKey = urlB64ToUint8Array(applicationServerPublicKey);
   swRegistration.pushManager.subscribe({
     userVisibleOnly: true,
@@ -54,4 +56,4 @@ function subscribeUser() {
 function updateSubscriptionOnServer(subscription) {
   console.log(JSON.stringify(subscription));
 }
-export { registerWorker, swRegistration }
+export { registerWorker, swRegistration, subscribeUser, isSubscribed }

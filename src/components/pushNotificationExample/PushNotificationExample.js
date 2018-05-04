@@ -14,8 +14,8 @@ class PushNotificationExample extends Component {
     this.setState({ [name] : value })
   }
 
-  handleSubmit = (e) => {
-    e.preventDefault()
+  handleSubmit = (event) => {
+    event.preventDefault()
     const title = this.state.title
     const options = {
       body: this.state.message,
@@ -44,7 +44,7 @@ class PushNotificationExample extends Component {
           onChange={this.handleChange}
           styleName='message'
         />
-        <button type="submit">Send Notification</button>
+        <button styleName='button' type="submit">Send Notification</button>
       </form>
     )
   }

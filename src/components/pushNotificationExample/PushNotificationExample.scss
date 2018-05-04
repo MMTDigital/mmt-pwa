@@ -1,3 +1,5 @@
+$primary-colour: #ec2821;
+
 .form {
   display: flex;
   flex-direction: column;
@@ -14,7 +16,7 @@
 
 .title {
   composes: default;
-  padding: 5px;
+  padding: 8px 5px;
   box-sizing: border-box;
   width: 100%;
   border: 1px solid lightgrey;
@@ -23,9 +25,46 @@
 
 .message {
   composes: default;
-  padding: 5px;
+  padding: 8px 5px;
   box-sizing: border-box;
   width: 100%;
   border: 1px solid lightgrey;
   margin-bottom: 12px;
+  height: 100px;
+}
+
+.button {
+  width: 100%;
+  display: block;
+  border: 2px solid $primary-colour;
+  background-color: transparent;
+  padding: 8px;
+  text-transform: uppercase;
+  position: relative;
+  color: $primary-colour;
+  transition: .3s;
+  transform: translateZ(0);
+  overflow: hidden;
+  cursor: pointer;
+
+  &:after {
+    position: absolute;
+    content: '';
+    height: 100%;
+    width: 0;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: .3s;
+    background-color: $primary-colour;
+    z-index: -1;
+  }
+
+  &:hover {
+    color: white;
+
+    &:after {
+      width: 100%;
+    }
+  }
 }
