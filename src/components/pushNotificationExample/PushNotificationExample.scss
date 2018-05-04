@@ -1,0 +1,31 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.default {
+  padding: 5px;
+  box-sizing: border-box;
+  width: 100%;
+  border: 1px solid lightgrey;
+  margin-bottom: 12px;
+}
+
+.title {
+  composes: default;
+  padding: 5px;
+  box-sizing: border-box;
+  width: 100%;
+  border: 1px solid lightgrey;
+  margin-bottom: 12px;
+}
+
+.message {
+  composes: default;
+  padding: 5px;
+  box-sizing: border-box;
+  width: 100%;
+  border: 1px solid lightgrey;
+  margin-bottom: 12px;
+}

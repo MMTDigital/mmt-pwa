@@ -52,6 +52,21 @@ self.addEventListener('activate', event => {
       .then(() => self.clients.claim())
   )
 })
+
+self.addEventListener('push', function(event) {
+  console.log('[Service Worker] Push Received.')
+  console.log('[Service Worker] Push had this data: ')
+
+  const title = 'Push MMT PWA'
+  const options = {
+    body: 'Message: Hello World',
+    icon: 'images/icon.png',
+    badge: 'images/badge.png'
+  };
+
+  const notificationPromise = self.registration.showNotification(title, options)
+  event.waitUntil(notificationPromise)
+})
 `
 
 export default template
