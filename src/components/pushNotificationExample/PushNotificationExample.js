@@ -9,8 +9,8 @@ class PushNotificationExample extends Component {
     message: ''
   }
 
-  handleChange = (event) => {
-    const { value, name } = event.target
+  handleChange = ({ target }) => {
+    const { value, name } = target
     this.setState({ [name] : value })
   }
 
