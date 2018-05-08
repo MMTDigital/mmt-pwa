@@ -5,7 +5,9 @@ class HomePage extends Component {
   render () {
     return (
       <div>
+
         <CardList />
+
       </div>
     )
   }

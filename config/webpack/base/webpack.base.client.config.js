@@ -36,13 +36,14 @@ module.exports = {
   plugins: [
     new WebpackPwaManifest({
       filename: 'manifest.json',
-      name: 'MMT Management Manager',
+      name: 'MMTPWA',
       short_name: 'MMTPWA',
       description: 'Manage your MMT Management in this PWA!',
       background_color: '#ffffff',
+      theme_color: '#ec2821',
       orientation: 'portrait',
       display: 'standalone',
-      publicPath: '/',
+      start_url: '/',
       icons: [
         {
           src: resolve('src/assets/mmt.png'),
