@@ -5,7 +5,7 @@ console.info('In offline')
 
 self.addEventListener('install', event => {
   console.info('Installed')
-  if(enableCache) {
+  if (enableCache) {
     event.waitUntil(
       self.caches.open(CACHE_NAME)
         .then(cache => (
@@ -28,7 +28,7 @@ self.addEventListener('install', event => {
 
 self.addEventListener('fetch', (event) => {
   console.log('Fetch')
-  if(enableCache) {
+  if (enableCache) {
     event.respondWith(
       self.caches
         .match(event.request)
