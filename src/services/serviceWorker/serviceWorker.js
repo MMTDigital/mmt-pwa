@@ -2,7 +2,7 @@ const applicationServerPublicKey = 'BBQbFed_Nv1Jv1ZsWNbeqqQT2ttt_HFgpBZ5wi4hCfJZ
 let isSubscribed = false;
 let swRegistration = null;
 
-function registerWorker() {
+const registerWorker = () => {
   if ('serviceWorker' in navigator && 'PushManager' in window) {
     console.log('Service Worker and Push is supported');
   
@@ -22,7 +22,7 @@ function registerWorker() {
   }
 }
 
-function urlB64ToUint8Array(base64String) {
+const urlB64ToUint8Array = (base64String) => {
   const padding = '='.repeat((4 - base64String.length % 4) % 4);
   const base64 = (base64String + padding)
     .replace(/\-/g, '+')
@@ -37,7 +37,7 @@ function urlB64ToUint8Array(base64String) {
   return outputArray;
 }
 
-function subscribeUser() {
+const subscribeUser = () => {
   console.log("running subscribe user");
   const applicationServerKey = urlB64ToUint8Array(applicationServerPublicKey);
   swRegistration.pushManager.subscribe({
@@ -53,7 +53,7 @@ function subscribeUser() {
   });
 }
 
-function updateSubscriptionOnServer(subscription) {
+const updateSubscriptionOnServer = (subscription) => {
   console.log(JSON.stringify(subscription));
 }
 export { registerWorker, swRegistration, subscribeUser, isSubscribed }

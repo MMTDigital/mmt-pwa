@@ -1,7 +1,19 @@
 $activated-colour: #ec2821;
 $deactive-colour: grey;
 
-.activated {
+.button {
+  width: 100%;
+  display: block;
+  border: 2px solid $deactive-colour;
+  background-color: $deactive-colour;
+  padding: 12px;
+  text-transform: uppercase;
+  margin: 12px 0;
+  color: white;
+  transition: .3s;
+}
+
+.is-active {
   width: 100%;
   display: block;
   border: 2px solid $activated-colour;
@@ -36,16 +48,4 @@ $deactive-colour: grey;
       width: 100%;
     }
   }
-}
-
-.deactivated {
-  width: 100%;
-  display: block;
-  border: 2px solid $deactive-colour;
-  background-color: $deactive-colour;
-  padding: 12px;
-  text-transform: uppercase;
-  margin: 12px 0;
-  color: white;
-  transition: .3s;
 }

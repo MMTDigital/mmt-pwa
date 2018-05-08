@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { subscribeUser, swRegistration } from '../../services/serviceWorker/serviceWorker'
-import './PushSubscribeExample.scss'
+import Button from '../Button/Button';
 
 class PushSubscribeExample extends Component {
   state = {
@@ -9,7 +9,6 @@ class PushSubscribeExample extends Component {
 
   componentDidMount () {
     navigator.serviceWorker.ready.then((swRegistration) => {
-      console.log("hello world");
       swRegistration.pushManager.getSubscription()
       .then((subscription) => {
         if(subscription) {
@@ -21,7 +20,7 @@ class PushSubscribeExample extends Component {
     })
   }
   
-  buttonClicked = (event) => {
+  buttonClicked = () => {
     if(!this.state.userSubscribed) {
       subscribeUser()
       this.setState({
@@ -31,17 +30,9 @@ class PushSubscribeExample extends Component {
   }
 
   render () {
-    let isSubscribed = this.state.userSubscribed
-
-    const button = this.state.userSubscribed ? (
-      <button styleName='deactivated'>Subscribe</button>
-    ) : (
-      <button styleName='activated' onClick={this.buttonClicked}>Subscribe</button>
-    )
-
     return (
       <div>
-        {button}
+        <Button isActive={this.state.userSubscribed} buttonText='Subscribe' buttonAction={this.buttonClicked} />
       </div>
     )
   }

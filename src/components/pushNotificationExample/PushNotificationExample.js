@@ -1,17 +1,24 @@
 import React, { Component } from 'react'
 import { swRegistration } from '../../services/serviceWorker/serviceWorker'
+import Button from '../Button/Button'
 import './PushNotificationExample.scss'
 
 class PushNotificationExample extends Component {
-  _initState = {
+  state = {
     title: '',
     message: ''
   }
-  state = this._initState
 
   handleChange = (event) => {
     const { value, name } = event.target
     this.setState({ [name] : value })
+  }
+
+  resetState () {
+    this.setState({
+      title: '',
+      message: ''
+    })
   }
 
   handleSubmit = (event) => {
@@ -23,7 +30,7 @@ class PushNotificationExample extends Component {
       badge: '../../assets/mmt.png'
     }
     swRegistration.showNotification(title, options)
-    this.setState(this._initState)
+    this.resetState()
   }
 
   render () {
@@ -44,7 +51,7 @@ class PushNotificationExample extends Component {
           onChange={this.handleChange}
           styleName='message'
         />
-        <button styleName='button' type="submit">Send Notification</button>
+        <Button buttonType='submit' buttonText='Send Notification' />
       </form>
     )
   }
