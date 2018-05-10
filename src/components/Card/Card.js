@@ -33,6 +33,7 @@ class Card extends Component {
   render () {
     const { name, subtitle, bio, stats, image } = this.props;
     const background = { backgroundImage: `url(${image})` };
+    const cardStyle= this.state.expandCard ? 'card card-expanded' : 'card';
 
     let bioDiv = null
     let statDiv = null
@@ -52,7 +53,7 @@ class Card extends Component {
     }
 
     return (
-      <div styleName='card' onClick={this.expandCardHandler.bind(this)}>
+      <div styleName={cardStyle} onClick={this.expandCardHandler.bind(this)}>
         <div styleName='image' style={background}>
           <div styleName='subtitle'>
             {subtitle}
