@@ -3,6 +3,13 @@ import PropTypes from 'prop-types';
 import './Card.scss';
 
 class Card extends Component {
+  constructor() {
+    super();
+    this.state = {
+      expandCard : false,
+    }
+  }
+
   renderStats(stat) {
     return (
       <div styleName='statistic' key={stat.title}>
