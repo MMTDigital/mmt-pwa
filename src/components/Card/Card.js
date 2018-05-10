@@ -8,6 +8,11 @@ class Card extends Component {
     this.state = {
       expandCard : false,
     }
+  };
+
+  expandCardHandler() {
+    if (this.state.expandCard === false) this.setState({expandCard: true});
+    if (this.state.expandCard === true)  this.setState({expandCard: false});
   }
 
   renderStats(stat) {
