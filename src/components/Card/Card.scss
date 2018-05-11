@@ -15,10 +15,9 @@ $block-shadow: 3px 3px 0 0 rgba(0, 0, 0, 1);
 .card {
   font-family: 'Bangers', cursive;
   box-sizing: border-box;
-  width: 100%;
-  transition: height 1s;
+  width: 360px;
+  transition: all 1s;
   height: 300px;
-  max-width: 360px;
   background-color: $card-background;
   border-radius: 12px;
   box-shadow: 2px 2px 6px 0 rgba(0, 0, 0, .41);
@@ -30,7 +29,8 @@ $block-shadow: 3px 3px 0 0 rgba(0, 0, 0, 1);
 }
 
 .card-expanded {
-  height: 450px;
+  height: 550px;
+  width: 500px;
 }
 
 .image {
