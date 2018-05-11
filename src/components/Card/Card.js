@@ -10,11 +10,9 @@ class Card extends Component {
     }
   };
 
-  // Why renderStats is not an arrow function? There is a reason?
-  // Using the arrow one I wouldn't have the need to bind the function in the render.
+  // Why don't you use arrow functions? There is a reason?
   expandCardHandler() {
-    if (this.state.expandCard === false) this.setState({expandCard: true});
-    if (this.state.expandCard === true)  this.setState({expandCard: false});
+    this.state.expandCard ? this.setState({ expandCard: false}) : this.setState({ expandCard: true })
   }
 
   renderStats(stat) {
@@ -33,8 +31,12 @@ class Card extends Component {
   render () {
     const { name, subtitle, bio, stats, image } = this.props;
     const background = { backgroundImage: `url(${image})` };
-    const cardStyle= this.state.expandCard ? 'card card-expanded' : 'card';
+    // TRANSITION for CARD, BIO AND STATS
+    const cardStyle = this.state.expandCard ? 'card card-expanded' : 'card';
+    const statsBioStyle = this.state.expandCard ? 'stats-bio stats-bio-appear' : 'stats-bio';
+    //
 
+    //BIO AND STATS TOGGLE
     let bioDiv = null
     let statDiv = null
 
@@ -45,6 +47,7 @@ class Card extends Component {
           <p styleName='text'>{bio}</p>
         </div>
       )
+
       statDiv = (
         <div styleName='stats'>
           {stats.map(this.renderStats)}
@@ -62,8 +65,10 @@ class Card extends Component {
         <div styleName='name'>
           {name}!
         </div>
-        {bioDiv}
-        {statDiv}
+        <div styleName={statsBioStyle}>
+          {bioDiv}
+          {statDiv}
+        </div>
       </div>
     )
   }
